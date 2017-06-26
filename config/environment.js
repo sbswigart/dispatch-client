@@ -20,6 +20,18 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    'ember-simple-auth': {
+      authorizer: 'authorizer:token'
+    },
+    'ember-simple-auth-token': {
+      serverTokenEndpoint: '/api/login', // The route for logging in
+      identificationField: 'username', // Our login expects username
+      passwordField: 'password',
+      tokenPropertyName: 'token', // Token is returned back as token key
+      timeFactor: 1000, // Needed since expiration sent in ms
+      authorizationPrefix: null, // Don't set a prefix, guardian doesn't like
+      authorizationHeaderName: 'Authorization' // Tell ember-simple-auth-token which header to place the token in
     }
   };
 
@@ -42,9 +54,7 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (environment === 'production') {
-
-  }
+  if (environment === 'production') {}
 
   return ENV;
 };

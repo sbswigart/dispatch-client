@@ -1,0 +1,11 @@
+<h4>Tasks</h4>
+
+<ul>
+  {{#each model as |task|}}
+  <li>
+    Task: {{task.description}}, completed: {{task.completed}}
+  </li>
+  {{else}}
+  No Tasks
+  {{/each}}
+</ul>

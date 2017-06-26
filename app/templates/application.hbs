@@ -1,11 +1,9 @@
-<h4>Tasks</h4>
-
-<ul>
-  {{#each model as |task|}}
-  <li>
-    Task: {{task.description}}, completed: {{task.completed}}
-  </li>
-  {{else}}
-  No Tasks
-  {{/each}}
-</ul>
+<h2 id="title">Welcome to Dispatch</h2>
+{{#if session.isAuthenticated}}
+  <h3>Logged in</h3>
+  <br />
+  <button {{action 'invalidateSession'}}>Logout</button>
+{{else}}
+  {{link-to 'Login' 'login'}}
+{{/if}}
+{{outlet}}

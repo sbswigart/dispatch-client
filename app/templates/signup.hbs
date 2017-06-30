@@ -1,0 +1,19 @@
+<div class="auth-container">
+  <h3>Create a New Account!</h3>
+  {{#if errorMessage}}
+    <div>
+      {{errorMessage}}
+    </div>
+  {{/if}}
+  <form class="auth-container">
+    {{input value=model.username placeholder="Username"}}
+    {{input value=model.email placeholder="Email"}}
+    {{input type="password" value=model.password placeholder="Password"}}
+    <button {{action "saveUser" model}}>Save</button>
+  </form>
+
+  <p>
+    Already have an account? {{link-to 'Login' 'login'}}
+  </p>
+
+</div>

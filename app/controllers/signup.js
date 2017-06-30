@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
   actions: {
     saveUser: function(model) {
       model.save().then(() => {
-        this.transitionToRoute('users');
+        this.transitionToRoute('tasks');
       }).catch((reason) => {
         this.set('errorMessage', reason.error || reason);
       });

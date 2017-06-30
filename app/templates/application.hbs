@@ -1,9 +1,11 @@
-<h2 id="title">Welcome to Dispatch</h2>
 {{#if session.isAuthenticated}}
   <h3>Logged in</h3>
   <br />
   <button {{action 'invalidateSession'}}>Logout</button>
+  {{outlet}}
 {{else}}
-  {{link-to 'Login' 'login'}}
+  <div class="auth-container">
+    <h2 class="welcome-title">Welcome to Dispatch</h2>
+    {{outlet}}
+  </div>
 {{/if}}
-{{outlet}}

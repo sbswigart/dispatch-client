@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  padding: 1em;
+  align-items: center;
+  background-color: #eee;
+  border-bottom: 1px solid #999;
+}
+
+button {
+    background: none;
+    border: none;
+    outline:none;
+}
+
+.spring {
+  flex: 1;
+}
